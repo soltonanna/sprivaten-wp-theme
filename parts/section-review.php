@@ -16,7 +16,11 @@ $columns = get_sub_field('columns');
             <img class="stars" src="<?php echo get_template_directory_uri(); ?>/images/stars.svg"  alt="stars-icon" />
             <p class="user-description"><?php echo $column['item_description']; ?></p>
             <div class="user-info">
-                <img src="<?php echo $column['item_image']; ?>" alt="<?php echo $column['item_name']; ?>" />
+                <?php if( $column['item_image'] ) { ?>
+                    <img src="<?php echo $column['item_image']; ?>" alt="<?php echo $column['item_name']; ?>" />
+                <?php } else { ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="<?php echo $column['item_title']; ?>" />
+                <?php } ?>
                 <div>
                     <p class="user-name"><?php echo $column['item_name']; ?></p>
                     <p class="user-role"><?php echo $column['item_role']; ?></p>

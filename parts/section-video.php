@@ -9,4 +9,8 @@ $video_url = get_sub_field('video_url');
     <p class="desc"><?php echo $description; ?></p>
 </div>
 
-<div class="video-block"><?php echo $video_url; ?></div>
+<?php if( $video_url ) { ?>
+    <div class="video-block"><?php echo $video_url; ?></div>
+<?php } else { ?>
+    <div class="video-block"><p>Don't forget add video !!</p></div>
+<?php }?>

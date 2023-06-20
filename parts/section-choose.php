@@ -14,11 +14,17 @@ $columns = get_sub_field('columns');
     <?php foreach( $columns as $column) : ?>
         <div class="choose-group__item">
             <p class="top">
-                <img src="<?php echo $column['item_image']; ?>" alt="<?php echo $column['item_title']; ?>" />
+                <?php if( $column['item_image'] ) { ?>
+                    <img src="<?php echo $column['item_image']; ?>" alt="<?php echo $column['item_title']; ?>" />
+                <?php } else { ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="<?php echo $column['item_title']; ?>" />
+                <?php } ?>
                 <span><?php echo $column['item_title']; ?></span>
             </p>
             <p class="middle"><?php echo $column['item_description']; ?></p>
-            <p class="bottom"><a href="<?php echo $column['item_link']; ?>">Learn more</a></p>
+            <?php if( $column['item_link'] ) : ?>
+                <p class="bottom"><a href="<?php echo $column['item_link']; ?>">Learn more</a></p>
+            <?php endif?>
         </div>          
     <?php endforeach; ?>
 </div>

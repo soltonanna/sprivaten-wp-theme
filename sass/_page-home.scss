@@ -7,6 +7,7 @@
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
+        background-color: #F3F3F3;
 
         @include displayFlex(row, nowrap, center, center, stretch);
 
@@ -70,6 +71,8 @@
                         img {
                             border-radius: 50%;
                             margin-right: 15px;
+                            width: 70px;
+                            height: 70px;
                         }
                         span {
                             @include fonts($text-color, 16px, 600, 24px);
@@ -111,6 +114,12 @@
                 @include respond(phone) { 
                     margin-top: 185px;
                     height: 350px;
+                }
+
+                p {
+                    @include fonts($orange-color, 24px, 600, 24px);
+                    text-align: center;
+                    padding-top: 2rem;
                 }
 
                 iframe {
@@ -180,7 +189,10 @@
                         @include displayFlex(row, nowrap, center, flex-start, center);
 
                         img {
+                            border-radius: 50%;
                             margin-right: 15px;
+                            width: 50px;
+                            height: 50px;
                         }
 
                         & > div {

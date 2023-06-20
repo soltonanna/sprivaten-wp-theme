@@ -10,6 +10,11 @@ $button_2 = get_sub_field('header_button_2');
     <p class="desc"><?php echo $description; ?></p>
 </div>
 
-<a href="<?php echo $button_1; ?>" class="btn btn-blue" target="_blank"> Get Quote now </a>
-<a href="<?php echo $button_2; ?>" class="btn btn-trans" target="_blank"> Learn more </a>
+<?php if ($button_1) : ?>
+    <a href="<?php echo $button_1; ?>" class="btn btn-blue" target="_blank"> Get Quote now </a>
+<?php endif; ?>
+
+<?php if ($button_2) : ?>
+    <a href="<?php echo $button_2; ?>" class="btn btn-trans" target="_blank"> Learn more </a>
+<?php endif; ?>
                             
