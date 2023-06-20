@@ -12,3 +12,7 @@ npm init
 ```sh
 npm install
 ```
+
+```sh
+Install adn Activate in WordPress / Themes section
+```
