@@ -1,0 +1,164 @@
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*,
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+button, input, select, textarea {
+    &:focus {
+        outline: none;
+        box-shadow: 2px 2px 15px #b3b2b2;
+    }
+}
+
+html, body {
+    font-size: 16px;
+    height: 100%;
+}
+
+.container {
+    max-width: 70vw;
+    padding: 0;
+    margin: 0 auto;
+
+    @include respond(phone) {
+        max-width: 100vw;
+    }
+}
+
+#content.site-content {
+    flex: 1 1 auto;
+}
+
+#page.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.btn {
+    padding: 10px 36px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 14px;
+    border-radius: 37px;
+    transition: all 1s;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    &.btn-blue {
+        color: #fff;
+        background-color: $blue-color;
+        border: 1px solid $blue-color;
+
+        &:hover {            
+            background-color: transparent;
+            color: $blue-color;
+        }
+    }
+
+    &.btn-trans {
+        color: $blue-color;
+        background-color:transparent;
+        border: 1px solid $blue-color;
+
+        &:hover {
+            background-color: $blue-color;
+            color: #fff;
+        }
+    }
+
+    &.btn-orange {
+        color: #fff;
+        background-color: $orange-color;
+        border: 1px solid $orange-color;
+        border-radius: 5px;
+
+        &:hover {
+            background-color:transparent;
+            color: $orange-color;
+        }
+    }
+}
+
+
+.title-desc-block {
+    &.normal {
+        text-align: center;
+        max-width: 40%;
+        margin: 0 auto 80px;
+
+        @include respond(phone) {
+            max-width: 90%;
+            margin: 0 auto 75px;
+        }
+
+        .title {
+            @include fonts($text-color, 40px, 700, 57px);
+            margin-bottom: 10px;
+
+            &.upper {
+                text-transform: uppercase;
+                @include respond(phone) {
+                    max-width: 72%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .desc {
+            @include fonts($secondary-text-color, 14px, 500, 20px);
+        }
+    }
+
+    &.main {
+        .title {
+            @include fonts($text-color, 58px, 800, 80px);
+            margin-bottom: 35px;
+            margin-right: 2rem;
+
+            @include respond(phone) {
+                @include fonts($text-color, 40px, 700, 57px);
+                text-align: center;
+                margin-right: 0;
+            }
+        }
+        .desc {
+            @include fonts($secondary-text-color, 20px, 500, 30px);
+            margin-bottom: 45px;
+
+            @include respond(phone) {
+                text-align: center;
+            }
+        }
+    }
+
+    &.small {
+
+        .title {
+            @include fonts($text-color, 24px, 700, 32px);
+            margin-bottom: 10px;
+        }
+        .desc {
+            @include fonts($secondary-text-color, 14px, 500, 20px);
+            
+            @include respond(phone) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    
+}

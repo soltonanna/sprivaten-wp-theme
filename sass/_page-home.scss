@@ -1,0 +1,292 @@
+.homepage-main {
+    /*  'HEADER' SECTION */
+    &__header-section {  
+        padding: 5rem 0 2rem;
+        height: 95vh;
+
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include displayFlex(row, nowrap, center, center, stretch);
+
+        @include respond(phone) {
+            height: inherit;
+        }
+
+        .container {
+            @include displayFlex(row, nowrap, center, space-between, center);
+            width: 100%;
+
+            @include respond(phone) {
+                @include displayFlex(column, nowrap, center,  flex-start, center);
+            }
+
+            .header-info {
+                @include respond(phone) {
+                   text-align: center;
+                }
+            }
+
+            .header-form {
+                h3 {
+                    @include fonts($text-color, 24px, 700, 32px);
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+
+    /* 'WHY CHOOSE US' SECTION */
+    &__choose-section {
+        padding: 80px 0;
+
+        .container {
+            .choose-group {
+                display: grid;
+                align-items: start;
+                justify-content: center;
+                grid-auto-flow: column;
+                grid-column-gap: 30px;
+                column-gap: 30px;
+                justify-items: center;
+
+                @include respond(phone) { 
+                    @include displayFlex(column, nowrap, center, center, center);
+                }
+
+                &__item {
+                    grid-template-columns: repeat(3, 1fr);
+                    border: 1px solid $light-blue;
+                    border-radius: 10px;
+                    max-width: 355px;
+                    text-align: left;
+
+                    .top {
+                        @include displayFlex(row, nowrap, center, center, center);
+                        background-color: $light-blue;
+                        padding: 30px 44px;
+
+                        img {
+                            border-radius: 50%;
+                            margin-right: 15px;
+                        }
+                        span {
+                            @include fonts($text-color, 16px, 600, 24px);
+                        }
+                    }
+                    .middle {
+                        @include fonts($secondary-text-color, 14px, 600, 24px);
+                        padding: 30px 44px 0;
+                        text-align: left;
+                    }
+                    .bottom {
+                        padding: 5px 44px 30px;
+                        a {
+                            @include fonts($orange-color, 14px, 600, 24px);
+                            text-decoration: none;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 'VIDEO' SECTION */
+    &__video-section {
+        padding: 80px 0;
+        background-color: #FAFAFA;
+
+        @include respond(phone) {
+            background-color: #F3F3F3;
+        }
+        .container {
+            .video-block {
+                background-color: $dark-blue;
+                height: 400px;
+                margin-top: 165px;
+                position: relative;
+
+                @include respond(phone) { 
+                    margin-top: 185px;
+                    height: 350px;
+                }
+
+                iframe {
+                    position: absolute;
+                    top: -30%; left: 50%;
+                    transform: translate(-50%, 0);
+
+                    width: 877px;
+
+                    @include respond(phone) { 
+                        width: 80vw;
+                        top: -40%;
+                    }
+                }
+            }
+        }
+    }
+
+    /* 'REVIEWS' SECTION */
+    &__reviews-section {
+        padding: 80px 0;
+        background-color: #F3F3F3;
+
+        @include respond(phone) {  
+            background-color: #FAFAFA;
+        }
+
+
+        .container {
+            .review-group {
+                display: grid;
+                align-items: start;
+                justify-content: end;
+                grid-auto-flow: column;
+                grid-column-gap: 30px;
+                column-gap: 30px;
+                justify-items: center;
+                width:100%;
+
+                @include respond(phone) { 
+                    @include displayFlex(column, nowrap, center, center, center);
+                }
+
+                &__item {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    border: 1px solid #DEDEDE;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    max-width: 355px;
+                    text-align: left;
+                    padding: 30px 35px;
+
+                    @include respond(phone) {
+                        margin-bottom: 30px;
+                    }
+
+                    .stars {
+                        margin-bottom: 21px;
+                    }
+
+                    .user-description {
+                        @include fonts($secondary-text-color, 14px, 600, 24px);
+                        margin-bottom: 20px;
+                    }
+
+                    .user-info {
+                        @include displayFlex(row, nowrap, center, flex-start, center);
+
+                        img {
+                            margin-right: 15px;
+                        }
+
+                        & > div {
+                            @include displayFlex(column, nowrap, center, center, flex-start);
+
+                            .user-name {
+                                @include fonts($orange-color, 14px, 600, 24px); 
+                            }
+                            .user-role {
+                                @include fonts($text-color, 14px, 600, 24px); 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 'TEAM' SECTION */
+    &__team-section {
+        padding: 80px 0;
+
+        .container {
+        
+            .team-group {
+                display: grid;
+                align-items: start;
+                justify-content: center;
+                grid-auto-flow: column;
+                grid-column-gap: 30px;
+                column-gap: 30px;
+                justify-items: center;
+                width:100%;
+
+                @include respond(phone) { 
+                    @include displayFlex(column, nowrap, center, center, center);
+                }
+
+                &__item {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    border: 1px solid #DEDEDE;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    max-width: 355px;
+                    text-align: center;
+
+                    @include respond(phone) {
+                        margin-bottom: 30px;
+                    }
+
+                    img {
+                        margin-bottom: 30px;
+                        width: 100%;
+                    }
+                    .member-name, .member-role {
+                        margin-bottom: 5px;
+                    }
+                    .member-name {
+                        @include fonts($text-color, 16px, 700, 24px);
+                    }
+                    .member-name {
+                        @include fonts($secondary-text-color, 14px, 600, 24px);
+                    }
+                    .social-icons {
+                        @include displayFlex(row, nowrap, center, center, center);
+                        a:not(:last-child) {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 'CONTACT' SECTION */
+    &__contact-section {   
+        padding: 80px 0;
+
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .container {
+            .contact-form {
+                & > p {
+                    @include fonts($text-color, 16px, 700, 24px);
+                }
+            
+                & > h3 {
+                    @include fonts($text-color, 40px, 700, 57px);
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+
+    &__contact-section.bottom {
+        padding: 40px 0;
+
+        .container {
+            @include displayFlex(row, nowrap, center, space-between, center);
+
+            @include respond(phone) {
+                @include displayFlex(column, nowrap, center, space-between, center);
+                width: 80%;
+            }
+        }
+    }   
+}

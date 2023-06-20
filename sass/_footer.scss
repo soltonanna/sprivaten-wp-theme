@@ -1,0 +1,43 @@
+footer {
+    
+    /* Icons and Menu*/
+    .footer-top-section {
+        background-color: $text-color;
+        padding: 53px 0;
+
+        .logo-social {
+            @include displayFlex(row, nowrap, center, space-between, center);
+            border-bottom: 1px solid #364067;
+            padding-bottom: 57px;
+
+            .site-title {
+                @include fonts(#fff, 24px, 700, 32px);
+            }
+
+            .social-media-section {
+                a:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .footer-menu {
+
+        }
+    }
+
+    /* CopyRights */
+    .footer-bottom-section {
+        background-color: $dark-blue;
+        padding: 25px 0;
+
+        .copyright {
+            @include fonts(#fff, 14px, 600, 24px);
+        }
+    }
+
+}
+
+
+
+            

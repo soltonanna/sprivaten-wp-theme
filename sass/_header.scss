@@ -1,0 +1,130 @@
+header {
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    padding: 2rem 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include respond(phone){
+        padding: 0;
+        position: static;
+    }
+
+    .container {
+    
+        .site-header-information {
+            @include displayFlex(row, nowrap, center, space-between, center);
+
+            background-color: transparent;
+
+            @include respond(phone){
+                background-color:#F6F6F6;
+                padding: 36px 34px;
+            }
+
+            /* 1. Title */
+            .site-title {
+                flex: 1 1 auto;
+                @include fonts($text-color, 24px, 700, 32px);
+            }
+        
+            /* 2. Burger menu button */
+            .menu-button-container {
+                display: flex;
+
+                @include respond(phone) {
+                    order: 2;
+                }
+
+                #primary-mobile-menu {
+                    display: none;
+                
+                    @include respond(phone) {
+                        display: flex;
+                        border: none;
+                    }
+                }
+            }
+
+            /* 4. Search and Cart icons */
+            .top-icons {
+                flex: 0 0 80px;
+                
+                @include respond(phone) {
+                    order: 1;
+                }
+                
+                img:first-child {
+                    margin-right: 22px;
+                }
+            }
+        }
+
+        /* 3. Navigation */
+        .primary-navigation {
+            flex: 0 0 auto;
+            margin-right: 39px;
+
+            @include respond(phone) {
+                display: none;
+            }
+
+            &.mobile {
+                display: none;
+
+                @include respond(phone) {
+                    @include displayFlex(row, nowrap, center, center, space-between);
+                    background-color:#F6F6F6;
+                    margin-top: -2px;
+                    width: 100%;
+                }
+            }
+
+            .primary-menu-container {
+                @include respond(phone) {
+                    display: none;
+            
+                    &.active {
+                        display: block;
+                    }
+                }
+
+                ul#primary-menu-list {
+                    @include displayFlex(row, nowrap, center, center, space-between);
+                    
+                    @include respond(phone) {
+                        @include displayFlex(column, nowrap, center, center, space-between);
+                        padding: 50px 0;
+                    }
+
+                    list-style: none; 
+                    margin: 0;
+                    padding: 0;
+        
+                    li {
+                        @include respond(phone) {
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+                        
+                        a {
+                            @include fonts($secondary-text-color, 14px, 600, 24px);
+                            text-decoration: none;
+                            padding: 10px 20px;
+
+                            @include respond(phone) {
+                                @include fonts($secondary-text-color, 30px, 400, 45px);
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+
+
